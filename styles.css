@@ -263,6 +263,7 @@ img{
 .centerText{
   display: flex;
   height: 100%;
+  color: white;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 20px;
@@ -473,6 +474,6 @@ img{
         width: 100%;
       }
       .centerText{
-        font-size:4vw
+        font-size:2vw
       }
     }
