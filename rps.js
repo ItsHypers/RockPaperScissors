@@ -148,17 +148,26 @@ function winner(winner, player, computer)
 
 function finalWinner(winner)
 {
+    let rock = document.getElementById("Crock")
+    let paper = document.getElementById("Cpaper")
+    let scissors = document.getElementById("Cscissors")
     if(winner == "computer")
     {
         document.getElementById("description").textContent = "Unfortunately you did not win! Restart and try again!"
         document.getElementById("title").textContent = "You lost!"
         document.getElementById("image").src="images/sad.png"
+        rock.classList.remove("computerHover")
+        paper.classList.remove("computerHover")
+        scissors.classList.remove("computerHover")
     }
     if(winner == "player")
     {
         document.getElementById("description").textContent = "Congrats! You beat the computer! Restart to try your luck again!"
         document.getElementById("title").textContent = "You won!"
         document.getElementById("image").src="images/happy.png"
+        rock.classList.remove("computerHover")
+        paper.classList.remove("computerHover")
+        scissors.classList.remove("computerHover")
     }
     document.getElementById("dismiss-popup-btn").disabled = false;
     document.getElementsByClassName("popup")[0].classList.add("active");

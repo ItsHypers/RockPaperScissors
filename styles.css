@@ -1,3 +1,4 @@
+body{background-color: #1F2937;}
 /* Box sizing rules */
 *,
 *::before,
@@ -186,6 +187,7 @@ img{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-color: #1F2937;
 }
 .textContainer{
   display: flex;
@@ -234,7 +236,6 @@ img{
 }
 .imageHover {
   display: inline-block;
-  padding: 15px 25px;
   font-size: 24px;
   cursor: pointer;
   text-align: center;
@@ -435,3 +436,47 @@ img{
   .enable{
     pointer-events: all;
   }
+
+  @media screen and (max-width: 912px)
+  {
+      body, html{
+          width: 100vw;
+          overflow-x: hidden;
+          padding: 0.8em 0;
+      }
+      .Headercontainer
+      {
+        width: 100%;
+        flex-direction: column;
+      }
+      .headerText{
+        gap: 30px;
+        width: 100%;
+      }
+      .RPSContainer{
+        margin-top: 300px;
+        width: 100%;
+        height: 1000px;
+        justify-content: stretch;
+      }   
+      .textContainer{
+        width: 100%;
+        gap: 50px
+      }
+      .boxContainer{
+        width: 100%;
+        margin-top: 20px;
+      }
+      .box1right{
+        width: 100%;
+      }
+      .box1left{
+        width: 100%;
+      }
+      .popup{
+        width: 100%;
+      }
+      .centerText{
+        font-size:4vw
+      }
+    }
