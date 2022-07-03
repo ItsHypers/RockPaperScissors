@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
-        <script src="rps.js"></script>
+        <script src="rps.js" defer></script>
     </head>
 
     <body>
@@ -23,8 +23,61 @@
                     <a href = "#">Contact</a>
                 </div>
             </div>
+        </div>    
+        <div class="box1">
+            <div class="RPSContainer">
+                <div class="textContainer">
+                    <div class="playerScore">
+                        <div><h3>Player Score:</h3></div>
+                        <div><h3 id="playerS">0</h3></div>
+                    </div>
+                    <div class="computerScore">
+                        <div><h3>Computer Score:</h3></div>
+                        <div><h3 id="computerS">0</h3></div>
+                    </div>
+                </div>
+                <div class="boxContainer">
+                    <div class="box1left">
+                        <button class="imageHover" id="rock"> <img src="images/rock.png"></button>
+                        <button class="imageHover" id="paper"><img src="images/paper.png"></button>
+                        <button class="imageHover" id="scissors"><img src="images/scissors.png"></button>
+                    </div>
+                    <div class="box1right">
+                        <div class="centerText">
+                            <div class="playerText">
+                                <div>
+                                    <p>Player Decision:</p>
+                                </div>
+                                <div>
+                                    <p id="playerDecision"></p>
+                                </div>
+                            </div>
+                            <div class="winnerText">
+                                <div>
+                                    <p>Winner is:</p>
+                                </div>
+                                <div>
+                                    <p id="winner">PLAYER</p>
+                                </div>
+                            </div>
+                            <div class="computerText">
+                                <div>
+                                    <p>Computer Decision:</p>
+                                </div>
+                                <div>
+                                    <p id="computerDecision"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box1left">
+                        <img src="images/rock.png">
+                        <img src="images/paper.png">
+                        <img src="images/scissors.png">
+                    </div>
+                </div>
+            </div>
         </div>
-
         <div class="footer">
             Website made by Ryan Thomas
           </div>

@@ -165,6 +165,152 @@ img{
     max-height: 100%;
     display: block; /* remove extra space below image */
 }
+.box1{
+  width: 100%;
+  border: black;
+  border-width: 10px;
+  height: 1000px;
+  max-height: 100%;
+  background-color: #1F2937;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 8;
+  left: 0;
+  margin-top: 5px;
+}
+.RPSContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.textContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  gap: 600px;
+  background-color: #247881;
+  border-radius: 20px;
+  margin-bottom: -50px;
+  width: 1000px;
+  height: 90px;
+  z-index: 4;
+}
+.playerScore{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  gap: 10px;
+  color: white;
+}
+.computerScore{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  gap: 10px;
+  color: white;
+}
+.boxContainer{
+  display: flex;
+  z-index: 5;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: space-between;
+  background-color: #247881;
+  border-radius: 20px;
+  width: 1000px;
+}
+.box1right{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+  flex: 0 1 90%;
+  background-color: #43919B;
+}
+.imageHover {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  background: none;
+  border: none;
+  border-width: 0;
+  border-radius: 15px;
+}
+
+.imageHover:hover {
+  border-width: 0;
+  background: none;
+  border-radius: 300px;
+  background:#1F2937;
+  opacity: 0.8;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.imageHover:active {
+  background:#1F2937;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.imageHover
+{
+  border-width: 0;
+  background: none;
+  border-radius: 300px;
+}
+.centerText{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+.playerText{
+  background-color: #51b2db;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  gap: 10px;
+  border-radius: inherit;
+}
+.winnerText{
+  background-color: #51b2db;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  gap: 10px;
+  border-radius: inherit;
+}
+.computerText{
+  background-color: #51b2db;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  gap: 10px;
+  border-radius: inherit;
+}
+.box1left{
+  justify-content: center;
+  width: 60%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
 
 .footer {
     position: fixed;

@@ -1,23 +1,23 @@
-function play()
+let playerScore = 0;
+let computerScore = 0;
+function play(playerPick)
 {
-    let playerScore = 0;
-    let computerScore = 0;
-    for(let i = 0; i < 5; i++){
-        computerPick = computer()
-        playerprompt = prompt("Rock, Paper or Scissors?")
-        playerPick = player(playerprompt.toString())
-        winner(winnerDecider(playerPick, computerPick), playerPick, computerPick)
-        if(winnerDecider(playerPick, computerPick) == "computer")
-        {
-            computerScore++
-        }
-        if(winnerDecider(playerPick, computerPick) == "player")
-        {
-            playerScore++
-        }
+    computerPick = computer()
+    winner(winnerDecider(playerPick, computerPick), playerPick, computerPick)
+    if(winnerDecider(playerPick, computerPick) == "computer")
+    {
+        computerScore++
     }
-    console.log("Player: " + playerScore)
-    console.log("Computer: " + computerScore)
+    if(winnerDecider(playerPick, computerPick) == "player")
+    {
+        playerScore++
+    }
+    document.getElementById("winner").textContent= CFL(winnerDecider(playerPick, computerPick));
+    document.getElementById("playerDecision").textContent=CFL(playerPick);
+    document.getElementById("computerDecision").textContent=CFL(computerPick);
+
+    document.getElementById("playerS").textContent=playerScore;
+    document.getElementById("computerS").textContent=computerScore;
 }
 
 function computer()
@@ -152,3 +152,8 @@ function randomInteger(min, max) {
 function CFL(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    play("rock")
+  });
+
