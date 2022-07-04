@@ -1,102 +1,107 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
-        <script src="rps.js" defer></script>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    </head>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="rps.js" defer></script>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  </head>
 
-    <body>
-        <div class="Headercontainer">
-            <div class="leftContainer">
-                <div class="logoContainer">
-                    <div class="logoImageContainer">
-                        <img class="logoImage" src="images/icon1.svg" height="auto"> 
-                        <div class="logoText"><h2 style="width: 200px">Ryan Thomas</h2></div>
-                    </div>
-                </div>
+  <body>
+    <div class="Headercontainer">
+      <div class="leftContainer">
+        <div class="logoContainer">
+          <div class="logoImageContainer">
+            <img class="logoImage" src="images/icon1.svg" height="auto" />
+            <div class="logoText">
+              <h2 style="width: 200px">Ryan Thomas</h2>
             </div>
-            <div class = "headerTextContainer">
-                <div class = "headerText">
-                    <a href = "#">About</a>
-                    <a href = "#">Characters</a>
-                    <a href = "#">FAQ</a>
-                    <a href = "#">Contact</a>
-                </div>
-            </div>
-        </div>    
-        <div class="popup center ">
-            <div class="icon">
-                <img class="logoImage" id="image" src="images/icon1.svg" height="auto"> 
-            </div>
-            <div class="title" id="title">
-              
-            </div>
-            <div class="description" id="description">
-              
-            </div>
-            <div class="dismiss-btn">
-              <button id="dismiss-popup-btn">
-                Restart
-              </button>
-            </div>
-           </div>
-        <div class="box1">
-            <div class="RPSContainer">
-                <div class="textContainer">
-                    <div class="playerScore">
-                        <div><h3>Player Score:</h3></div>
-                        <div><h3 id="playerS">0</h3></div>
-                    </div>
-                    <div class="computerScore">
-                        <div><h3>Computer Score:</h3></div>
-                        <div><h3 id="computerS">0</h3></div>
-                    </div>
-                </div>
-                <div class="boxContainer">
-                    <div class="box1left">
-                        <button class="imageHover" id="rock"> <img src="images/rock.png"></button>
-                        <button class="imageHover" id="paper"><img src="images/paper.png"></button>
-                        <button class="imageHover" id="scissors"><img src="images/scissors.png"></button>
-                    </div>
-                    <div class="box1right">
-                        <div class="centerText">
-                            <div class="playerText">
-                                <div>
-                                    <h2>Player Decision:</h2>
-                                </div>
-                                <div>
-                                    <h2 id="playerDecision"></h2>
-                                </div>
-                            </div>
-                            <div class="winnerText">
-                                <div>
-                                    <h2>Winner is:</h2>
-                                </div>
-                                <div>
-                                    <h2 id="winner"></h2>
-                                </div>
-                            </div>
-                            <div class="computerText">
-                                <div>
-                                    <h2>Computer Decision:</h2>
-                                </div>
-                                <div>
-                                    <h2 id="computerDecision"></h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box1left">
-                        <img id="Crock" src="images/rock.png">
-                        <img id="Cpaper" src="images/paper.png">
-                        <img id="Cscissors" src="images/scissors.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            Website made by Ryan Thomas
           </div>
-    </body>
+        </div>
+      </div>
+      <div class="headerTextContainer">
+        <div class="headerText">
+          <a href="#">About</a>
+          <a href="#">Characters</a>
+          <a href="#">FAQ</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="popup center">
+      <div class="icon">
+        <img
+          class="logoImage"
+          id="image"
+          src="images/icon1.svg"
+          height="auto"
+        />
+      </div>
+      <div class="title" id="title"></div>
+      <div class="description" id="description"></div>
+      <div class="dismiss-btn">
+        <button id="dismiss-popup-btn">Restart</button>
+      </div>
+    </div>
+    <div class="box1">
+      <div class="RPSContainer">
+        <div class="textContainer">
+          <div class="playerScore">
+            <div><h3>Player Score:</h3></div>
+            <div><h3 id="playerS">0</h3></div>
+          </div>
+          <div class="computerScore">
+            <div><h3>Computer Score:</h3></div>
+            <div><h3 id="computerS">0</h3></div>
+          </div>
+        </div>
+        <div class="boxContainer">
+          <div class="box1left">
+            <button class="imageHover" id="rock">
+              <img src="images/rock.png" />
+            </button>
+            <button class="imageHover" id="paper">
+              <img src="images/paper.png" />
+            </button>
+            <button class="imageHover" id="scissors">
+              <img src="images/scissors.png" />
+            </button>
+          </div>
+          <div class="box1right">
+            <div class="centerText">
+              <div class="playerText">
+                <div>
+                  <h2>Player Decision:</h2>
+                </div>
+                <div>
+                  <h2 id="playerDecision"></h2>
+                </div>
+              </div>
+              <div class="winnerText">
+                <div>
+                  <h2>Winner is:</h2>
+                </div>
+                <div>
+                  <h2 id="winner"></h2>
+                </div>
+              </div>
+              <div class="computerText">
+                <div>
+                  <h2>Computer Decision:</h2>
+                </div>
+                <div>
+                  <h2 id="computerDecision"></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box1left">
+            <img id="Crock" src="images/rock.png" />
+            <img id="Cpaper" src="images/paper.png" />
+            <img id="Cscissors" src="images/scissors.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">Website made by Ryan Thomas</div>
+  </body>
 </html>
