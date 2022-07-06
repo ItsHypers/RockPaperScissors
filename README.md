@@ -5,7 +5,7 @@
 
 > A Javscript, HTML and CSS Rock Paper Scissors game
 
-### ✨ [Demo](https://itshypers.github.io/RockPaperScissors/)
+### ✨ [Live Website](https://itshypers.github.io/RockPaperScissors/)
 
 ## Author
 
