@@ -1,6 +1,22 @@
-Rock Paper Scissors, based on The Oden Projects Foundation project.
+<h1 align="center">Welcome to Rock Paper Scissors 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.3-blue.svg?cacheSeconds=2592000" />
+</p>
 
-This helped me learn basic Javascript and connect the Javascript to the website, with some UI
+> A Javscript, HTML and CSS Rock Paper Scissors game
 
-Live Preview:
-https://itshypers.github.io/RockPaperScissors/
+### ✨ [Demo](https://itshypers.github.io/RockPaperScissors/)
+
+## Author
+
+👤 **Ryan Thomas**
+
+* Github: [@ItsHypers](https://github.com/ItsHypers)
+* LinkedIn: [@ryanthomas11](https://linkedin.com/in/ryanthomas11)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
