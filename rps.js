@@ -1,20 +1,37 @@
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => {
+  play("0");
+});
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => {
+  play("1");
+});
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => {
+  play("2");
+});
+
 let playerScore = 0;
 let computerScore = 0;
-document.getElementById("dismiss-popup-btn").disabled = true;
+const choices = ["rock", "paper", "scissors"];
+
 function play(playerPick) {
   computerPick = computer();
-  winner(winnerDecider(playerPick, computerPick), playerPick, computerPick);
-  if (winnerDecider(playerPick, computerPick) == "computer") {
+  winner(winnerDecider(playerPick, computerPick));
+  if (winnerDecider(playerPick, computerPick) == "Computer") {
     computerScore++;
   }
-  if (winnerDecider(playerPick, computerPick) == "player") {
+  if (winnerDecider(playerPick, computerPick) == "Player") {
     playerScore++;
   }
-  document.getElementById("winner").textContent = CFL(
-    winnerDecider(playerPick, computerPick)
+  document.getElementById("winner").textContent = winnerDecider(
+    playerPick,
+    computerPick
   );
-  document.getElementById("playerDecision").textContent = CFL(playerPick);
-  document.getElementById("computerDecision").textContent = CFL(computerPick);
+  document.getElementById("playerDecision").textContent =
+    NumtoString(playerPick);
+  document.getElementById("computerDecision").textContent =
+    NumtoString(computerPick);
   document.getElementById("playerS").textContent = playerScore;
   document.getElementById("computerS").textContent = computerScore;
   if (playerScore == 5) {
@@ -26,79 +43,41 @@ function play(playerPick) {
 }
 
 function computer() {
-  number = randomInteger(1, 3);
+  number = randomInteger(0, 2);
   let rock = document.getElementById("Crock");
   let paper = document.getElementById("Cpaper");
   let scissors = document.getElementById("Cscissors");
-  if (number === 1) {
-    answer = "rock";
-    rock.classList.add("computerHover");
-    paper.classList.remove("computerHover");
-    scissors.classList.remove("computerHover");
+  if (number === 0) {
+    addEffect(rock, "computerHover");
+    removeEffect(paper, "computerHover", scissors);
+  } else if (number === 1) {
+    addEffect(paper, "computerHover");
+    removeEffect(rock, "computerHover", scissors);
   } else if (number === 2) {
-    answer = "paper";
-    rock.classList.remove("computerHover");
-    paper.classList.add("computerHover");
-    scissors.classList.remove("computerHover");
-  } else if (number === 3) {
-    answer = "scissors";
-    rock.classList.remove("computerHover");
-    paper.classList.remove("computerHover");
-    scissors.classList.add("computerHover");
+    addEffect(scissors, "computerHover");
+    removeEffect(rock, "computerHover", paper);
   }
-  return answer;
+  return number;
 }
-
-function player(answer) {
-  if (answer === String) {
-    answer = answer.toLowerCase();
-  }
-  if (answer === 1 || answer === "rock") {
-    answer = "rock";
-  } else if (answer === 2 || answer === "paper") {
-    answer = "paper";
-  } else if (answer === 3 || answer == "scissors") {
-    answer = "scissors";
-  }
-  return answer;
+function randomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function winnerDecider(playerPick, computerPick) {
-  if (playerPick == 1 || playerPick == "rock") {
-    if (computerPick == 1 || computerPick == "rock") {
-      return "draw";
-    }
-    if (computerPick == 2 || computerPick == "paper") {
-      return "computer";
-    }
-    if (computerPick == 2 || computerPick == "scissors") {
-      return "player";
-    }
+  const x = playerPick;
+  const y = computerPick;
+  if (x == y) {
+    return "Draw";
   }
-
-  if (playerPick == 2 || playerPick == "paper") {
-    if (computerPick == 1 || computerPick == "rock") {
-      return "player";
-    }
-    if (computerPick == 2 || computerPick == "paper") {
-      return "draw";
-    }
-    if (computerPick == 2 || computerPick == "scissors") {
-      return "computer";
-    }
+  if (mod(x - y, choices.length) < choices.length / 2) {
+    return "Player";
+  } else {
+    return "Computer";
   }
-
-  if (playerPick == 3 || playerPick == "scissors") {
-    if (computerPick == 1 || computerPick == "rock") {
-      return "computer";
-    }
-    if (computerPick == 2 || computerPick == "paper") {
-      return "player";
-    }
-    if (computerPick == 2 || computerPick == "scissors") {
-      return "draw";
-    }
-  }
+}
+function mod(a, b) {
+  const c = a % b;
+  return c < 0 ? c + b : c;
 }
 
 function winner(winner, player, computer) {
@@ -122,55 +101,32 @@ function finalWinner(winner) {
       "Unfortunately you did not win! Restart and try again!";
     document.getElementById("title").textContent = "You lost!";
     document.getElementById("image").src = "images/sad.png";
-    rock.classList.remove("computerHover");
-    paper.classList.remove("computerHover");
-    scissors.classList.remove("computerHover");
+    removeEffect(rock, "computerHover", paper, scissors);
   }
   if (winner == "player") {
     document.getElementById("description").textContent =
       "Congrats! You beat the computer! Restart to try your luck again!";
     document.getElementById("title").textContent = "You won!";
     document.getElementById("image").src = "images/happy.png";
-    rock.classList.remove("computerHover");
-    paper.classList.remove("computerHover");
-    scissors.classList.remove("computerHover");
+    removeEffect(rock, "computerHover", paper, scissors);
   }
   document.getElementById("dismiss-popup-btn").disabled = false;
   document.getElementsByClassName("popup")[0].classList.add("active");
 }
 
-function convertNumtoString(number) {
+function NumtoString(number) {
+  if (number == 0) {
+    return "Rock";
+  }
   if (number == 1) {
-    return "rock";
+    return "Paper";
   }
   if (number == 2) {
-    return "paper";
-  }
-  if (number == 3) {
-    return "scissors";
+    return "Scissors";
   }
 }
 
-function randomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function CFL(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-const rock = document.querySelector("#rock");
-rock.addEventListener("click", () => {
-  play("rock");
-});
-const paper = document.querySelector("#paper");
-paper.addEventListener("click", () => {
-  play("paper");
-});
-const scissors = document.querySelector("#scissors");
-scissors.addEventListener("click", () => {
-  play("scissors");
-});
-
+document.getElementById("dismiss-popup-btn").disabled = true;
 document
   .getElementById("dismiss-popup-btn")
   .addEventListener("click", function () {
@@ -184,3 +140,21 @@ document
     document.getElementById("computerS").textContent = 0;
     document.getElementById("dismiss-popup-btn").disabled = true;
   });
+function removeEffect(a, b, c) {
+  a.classList.remove(b);
+  if (typeof c !== "undefined") {
+    c.classList.remove(b);
+  }
+  if (typeof d !== "undefined") {
+    d.classList.remove(b);
+  }
+}
+function addEffect(a, b, c, d) {
+  a.classList.add(b);
+  if (typeof c !== "undefined") {
+    c.classList.add(b);
+  }
+  if (typeof d !== "undefined") {
+    d.classList.add(b);
+  }
+}
